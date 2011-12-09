@@ -1,0 +1,76 @@
+
+
+
+
+
+ /* Pop Up Window CSS #3399FF */
+.main{ margin: 10; float:center;}
+.loc{ margin:0; color:#339900; height:auto; width:auto; font-family:Tahoma; padding-top:3px; }
+.temp{ margin:0; color:#339900; height:auto; width:auto; font-family:Tahoma; padding-top:1px; }
+.logo { margin:0; height:auto; width:100px; }
+img.header {float:left; clear:right; margin-right:50px;}
+.change-link{color:#3399FF;text-decoration:none;}
+.line-separator{clear:both; height:2px;font-size: 1px;line-height: 5px;}
+
+.clear{clear:both; height:0;font-size: 1px;line-height: 0px;}
+
+#header {
+    background: none repeat scroll 0 0 transparent !important;
+    height: 122px;
+}
+
+#header .console_header {
+    background: url("/images/consoleheader.png") repeat scroll 0 0 transparent;
+    height: 56px;
+    left: 15px;
+    position: absolute;
+    top: 66px;
+    width: 1052px;
+}
+
+.headernav {
+  left: 420px;
+  position: absolute;
+  top: 80px;
+  width: 660px !important;
+}
+.headernav .item {
+  height: auto !important;
+  width: auto !important;
+}
+.headernav a {
+  color: #E3E3E3;
+  display: block;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  height: 30px !important;
+  margin-right: 12px;
+  padding: 12px 12px 0;
+  text-decoration: none !important;
+  width: auto !important;
+}
+.headernav a:hover {
+  color: #61D92E;
+}
+.headernav .item.active a {
+  background: none repeat scroll 0 0 #FFFFFF;
+  color: #32A800;
+}
+
+.headernav .item.active a {
+  background: none repeat scroll 0 0 #FFFFFF;
+  color: #32A800;
+}
+
+.welcomepanel h4{ text-align:center; }
+.weatherpopup h5{ text-align:center; }
+
+
+/*User Control Panel Section*/
+#user-cp{position:absolute; top:6px; right:6px;font-size:11px; padding:10px; width:450px; height:40px;}
+#user-cp .welcome{position:relative; margin:0; position:absolute; top:12px; left:10px; text-align:right; display:block; width:200px; color:#aaa;}
+#user-cp .welcome em{color:#666;}
+#user-cp ul{position:absolute; top:12px; right:20px; display:inline;}
+#user-cp ul li{display:inline;}
+#user-cp em{font-style:normal;}

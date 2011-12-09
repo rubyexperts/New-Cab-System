@@ -1,0 +1,8 @@
+development:
+  adapter: mysql
+  port: 3307
+  encoding: utf8
+  database: cabie_development
+  username: root 
+  password: 
+  host: localhost

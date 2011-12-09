@@ -1,0 +1,5 @@
+  <p>
+      <%= f.label :type, "Type" %><br />
+      <%= f.select :type, options_for_select(%w(Passenger Company), "#{params[:type]}" ) %>
+  </p>
+

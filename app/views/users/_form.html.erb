@@ -1,0 +1,17 @@
+<div id="signup_form">
+
+  <%= form_for @user, :url => signup_path do |f| %>
+    <%= render "shared/error_messages", :target => @user %>
+
+    <%= render "first_name", :f => f %>
+    <%= render "last_name", :f => f %>
+    <%= render "email", :f => f %>
+    <%= render "type", :f => f %>
+    <%= render "password", :f => f %>
+    <%= render "password_confirmation", :f => f %>
+
+    <p><%= f.submit (@user.new_record? ? "Sign up" : "Update") %></p>
+  <% end %>
+  
+</div>
+
