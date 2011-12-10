@@ -14,6 +14,8 @@ Cabie::Application.routes.draw do
     get 'confirmation_needed' => 'confirmations#confirmation_needed'
     
     resources :home
+    
+    root :to => "sessions#new"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
