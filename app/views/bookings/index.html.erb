@@ -4,11 +4,11 @@
 -----------------------------------------------------------------------------
 <% @bookings.each do |booking| %>
 
-     <p>  
+     <p onclick="location.href='/bookings/<%= booking.id %>'" style="cursor:pointer">  
         Pick Up From : <%= booking.pickup_address %> </br>
         Drop Off at : <%= booking.drop_address %> </br>
         Booked At : <%= booking.created_at.strftime('%l:%M %p, %b %d') %> </br>
-        Status : <%= booking.current_status %>
+        Status : <b> <%= booking.current_status %> </b>
      </p>
     -----------------------------------------------------------------------------
 <% end %>
