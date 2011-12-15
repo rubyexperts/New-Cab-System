@@ -2,13 +2,21 @@ class User < ActiveRecord::Base
 
    attr_accessor :password
 
-   attr_accessible :first_name, :last_name, :mobile_number, :email, :password, :password_confirmation
+   attr_accessible :type, :first_name, :last_name, :mobile_number, :licence_number, :email, :password, :password_confirmation
+   
+   has_many :bookings
 
-   validates :first_name, :presence => true, :length => { :maximum => 70 }
-   validates :last_name, :presence => true, :length => { :maximum => 70 }
+   validates :first_name, :presence => true, :length => { :maximum => 70 }, :if => :first_name
+   validates :last_name, :presence => true, :length => { :maximum => 70 }, :if => :last_name
+   
+   validates :mobile_number, :presence => true,  :if => :mobile_number
+   
+   validates :email, :presence => true, :uniqueness => true,
+                      :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i},
+                      :if => :email
    
    # user will be able to edit her profile without providing password
-   validates_presence_of :password, :on => :create
+   validates_presence_of :password, :if => :password #, :on => :create,
    validates_confirmation_of :password, :allow_blank => true
    validates_length_of :password, :within => 6..40, :allow_blank => true
    
@@ -68,6 +76,18 @@ class User < ActiveRecord::Base
      self.password_reset_sent_at = Time.zone.now
      save!
      UserMailer.password_reset(self).deliver
+   end
+   
+   def is_passenger?
+     self.type == "Passenger"
+   end
+   
+   def is_company?
+     self.type == "Company"
+   end
+   
+   def is_driver?
+     self.type == "Driver"
    end
   
    private
