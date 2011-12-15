@@ -1,0 +1,20 @@
+
+<h4> All Bookings &nbsp; &nbsp;  |  &nbsp; &nbsp;<%= link_to "Create Booking", new_booking_path %> </h4>
+
+-----------------------------------------------------------------------------
+<% @bookings.each do |booking| %>
+
+     <p>  
+        Pick Up From : <%= booking.pickup_address %> </br>
+        Drop Off at : <%= booking.drop_address %> </br>
+        Booked At : <%= booking.created_at.strftime('%l:%M %p, %b %d') %> </br>
+        Status : <%= booking.current_status %>
+     </p>
+    -----------------------------------------------------------------------------
+<% end %>
+
+
+
+   
+
+  

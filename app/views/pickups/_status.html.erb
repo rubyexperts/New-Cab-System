@@ -1,0 +1,22 @@
+<h2> Job Details </h2>
+
+
+     <h3> Trip Summary </h3>
+
+     <p> Pick Up From : <%= @booking.pickup_address %> </p>
+
+     <p> Drop Off at : <%= @booking.drop_address %> </p>
+
+     <% if @booking.is_progress? %>
+
+           <form action="/accept_booking/<%= @booking.id %>">
+               <input name="commit" type="submit" value="Collect" />
+           </form>
+
+     <% end %> 
+     
+     <% if @booking.is_collected? %>  
+         <span class=""> Collected </span>
+     <% end %>
+     
+     <br/><br/>

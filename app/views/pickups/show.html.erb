@@ -1,0 +1,14 @@
+
+
+<% if @booking.is_pending? %>
+
+     <%= render "preview" %>
+
+<% else %>
+
+     <%= render "status" %>
+
+<% end %>
+
+
+<%= link_to "Back", pickups_path %>

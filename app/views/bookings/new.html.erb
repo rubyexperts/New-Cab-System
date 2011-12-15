@@ -1,0 +1,16 @@
+<h1> Create Booking </h1>
+
+<div id="signup_form">
+
+    <%= form_for @booking, :url => bookings_path do |f| %>
+    
+        <%= render "shared/error_messages", :target => @booking %>
+  
+        <%= render "form", :f => f %>
+	
+    <% end %>
+
+</div>
+
+
+

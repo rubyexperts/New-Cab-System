@@ -25,9 +25,27 @@
                        <div class="item closet <% if @select == "home" %> active <% end %>">
                           <a class="console" href="/home">Home</a>
                        </div>
-                       <div class="item timeline <% if @select == "timeline" %> active <% end %>">
-                          <a class="console" href="/home">Create Booking</a>
-                       </div>
+                       <% if current_user.is_passenger? %>
+                          <div class="item timeline <% if @select == "booking" %> active <% end %>">
+                             <a class="console" href="/bookings">My Bookings</a>
+                          </div>
+                       <% end %>
+                       <% if current_user.is_company? %>
+                          <div class="item timeline <% if @select == "vehicles" %> active <% end %>">
+                             <a class="console" href="/vehicles">Vehicles</a>
+                          </div>
+                          <div class="item timeline <% if @select == "drivers" %> active <% end %>">
+                             <a class="console" href="/drivers">Drivers</a>
+                          </div>
+                       <% end %>
+                       <% if current_user.is_driver? %>
+                          <div class="item timeline <% if @select == "pickups" %> active <% end %>">
+                             <a class="console" href="/pickups">Pickups</a>
+                          </div>
+                          <div class="item timeline <% if @select == "collected" %> active <% end %>">
+                             <a class="console" href="/collected">Collected</a>
+                          </div>
+                       <% end %>
                    </div>
 
               </div>

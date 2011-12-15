@@ -1,0 +1,21 @@
+
+<h4> All Vehicles &nbsp; &nbsp;  |  &nbsp; &nbsp; <%= link_to "New Vehicle", new_vehicle_path %>  </h4>
+
+
+<% unless @vehicles.empty? %>
+  
+      <% @vehicles.each do |vehicle| %>
+
+          <p>  
+             Name : <%= vehicle.name %> </br>
+             Vehicle Number : <%= vehicle.taxi_number %> </br>
+             <%= link_to 'Edit', edit_vehicle_path(vehicle) %> &nbsp; | &nbsp;
+             <%= link_to 'Destroy', vehicle, :confirm => 'Are you sure?', :method => :delete %>
+          </p>
+          
+      <% end %>
+
+<% end %>
+   
+
+  

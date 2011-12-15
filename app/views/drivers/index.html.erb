@@ -1,0 +1,20 @@
+
+<h4> All Drivers &nbsp; &nbsp;  |  &nbsp; &nbsp; <%= link_to "New Driver", new_driver_path %>  </h4>
+
+
+<% unless @drivers.empty? %>
+
+      <% @drivers.each do |driver| %>
+
+		  <p>  
+			 Licence Number : <%= driver.licence_number %> </br>
+			 Mobile Number : <%= driver.mobile_number %> </br>
+			 <%= link_to 'Edit', edit_driver_path(driver) %> &nbsp; | &nbsp;
+			 <%= link_to 'Destroy', driver, :confirm => 'Are you sure?', :method => :delete %>
+		  </p>
+
+	  <% end %>
+
+<% end %>
+
+

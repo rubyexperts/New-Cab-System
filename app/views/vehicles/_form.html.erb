@@ -1,0 +1,16 @@
+      
+
+      <p>
+         <%= f.label :name, "Vehicle Name" %><br />
+         <%= f.text_field :name %>
+      </p>
+
+      <p>
+         <%= f.label :taxi_number, "Taxi Number" %><br />
+         <%= f.text_field :taxi_number %>
+      </p>
+   
+      <p>
+         <%= f.submit (@vehicle.new_record? ? "Create" : "Update") %>   Or
+         <%= link_to "Cancel", vehicles_path %>
+      </p>

@@ -1,0 +1,41 @@
+      
+   
+      <p>
+         <%= f.label :first_name, "First Name" %><br />
+         <%= f.text_field :first_name %>
+      </p>
+      
+      <p>
+         <%= f.label :last_name, "Last Name" %><br />
+         <%= f.text_field :last_name %>
+      </p>
+      
+      <p>
+         <%= f.label :email, "Email" %><br />
+         <%= f.text_field :email %>
+      </p>
+      
+      <p>
+        <%= f.label :password, "Password" %><br />
+        <%= f.password_field :password %>
+      </p>
+      
+      <p>
+         <%= f.label :password_confirmation, "Confirm Password" %><br />
+         <%= f.password_field :password_confirmation %>
+      </p>
+
+      <p>
+         <%= f.label :licence_number, "License Number" %><br />
+         <%= f.text_field :licence_number %>
+      </p>
+      
+      <p>
+         <%= f.label :mobile_number, "Mobile Number" %><br />
+         <%= f.text_field :mobile_number %>
+      </p>
+    
+      <p>
+         <%= f.submit (@driver.new_record? ? "Create" : "Update") %>   Or
+         <%= link_to "Cancel", drivers_path %>
+      </p>

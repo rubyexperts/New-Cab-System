@@ -1,0 +1,16 @@
+<h1> Create Driver </h1>
+
+<div id="signup_form">
+
+    <%= form_for @driver, :url => driver_path(@driver) do |f| %>
+    
+        <%= render "shared/error_messages", :target => @driver %>
+  
+        <%= render "form", :f => f %>
+	
+    <% end %>
+
+</div>
+
+
+

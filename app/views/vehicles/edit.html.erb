@@ -1,0 +1,16 @@
+<h1> Update Vehicle </h1>
+
+<div id="signup_form">
+
+    <%= form_for @vehicle, :url => vehicle_path(@vehicle) do |f| %>
+    
+        <%= render "shared/error_messages", :target => @vehicle %>
+  
+        <%= render "form", :f => f %>
+	
+    <% end %>
+
+</div>
+
+
+

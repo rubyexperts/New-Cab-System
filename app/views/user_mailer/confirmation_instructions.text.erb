@@ -3,6 +3,6 @@ Please confirm your email address by clicking the URL below.
 <%#= confirmation_url(@user.confirmation_token) %>
 
 <a href="http://localhost:3000/<%= @user.confirmation_token %>"> 
-   http://localhost:3000/<%= @user.confirmation_token %>
+   http://localhost:3000/confirm/<%= @user.confirmation_token %>
 </a>
 
