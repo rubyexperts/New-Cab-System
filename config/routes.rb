@@ -22,6 +22,7 @@ Cabie::Application.routes.draw do
     match "/booking_status" => "bookings#booking_status"
     match "/collected" => "pickups#collected"
     match "/accept_booking/:id" => "pickups#accept_booking"
+    match "/my_pickups" => "pickups#my_pickups"
     
     root :to => "sessions#new"
   

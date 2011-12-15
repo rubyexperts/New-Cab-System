@@ -3,19 +3,30 @@
 
 -----------------------------------------------------------------------------
 
-<% @bookings.each do |booking| %>
+<div class="allbookings">
+   
+    <%= render 'pickups' %>
+     
+</div>
 
-     <p onclick="location.href='/pickups/<%= booking.id %>'" style="cursor:pointer">
-        Pick Up From : <%= booking.pickup_address %> </br>
-        Drop Off at : <%= booking.drop_address %> </br>
-        With in :  <%= booking.pick_time_in_mins %> mins </br>
-        Status :  <%= booking.current_status %>
-     </p>
-    -----------------------------------------------------------------------------
+
+
+<script type="text/javascript">
+
+
+   $j(document).ready(function() 
+   {
+     var refreshId = setInterval(function() 
+      {
+        $j.post('/my_pickups', function(data)
+        { 
+          $j('.allbookings').html(data);
+        })
+       }, 120000);
+       
+   });
     
-<% end %>
-
-
+</script>
 
    
 

@@ -1,0 +1,12 @@
+
+     <% @bookings.each do |booking| %>
+
+         <p onclick="location.href='/pickups/<%= booking.id %>'" style="cursor:pointer">
+             Pick Up From : <%= booking.pickup_address %> </br>
+             Drop Off at : <%= booking.drop_address %> </br>
+             With in :  <%= booking.pick_time_in_mins %> mins </br>
+             Status :  <%= booking.current_status %>
+         </p>
+          -----------------------------------------------------------------------------
+
+     <% end %>

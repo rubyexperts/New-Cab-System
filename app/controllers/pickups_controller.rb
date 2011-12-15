@@ -1,9 +1,8 @@
 class PickupsController < ApplicationController
 
-    before_filter :login_required
-	before_filter :check_permissions
+    before_filter :login_required#, :exclude => [:my_pickups]
+	before_filter :check_permissions#, :exclude => [:my_pickups]
 	layout 'default'
-
 
 	def index
 	  @select = "pickups"
@@ -11,6 +10,15 @@ class PickupsController < ApplicationController
 	  progress_bookings = Booking.find(:all, :conditions => ['accepted_by = ?', current_user.id] )
 	  @bookings = pick_bookings.concat(progress_bookings).uniq
 	end
+
+    # This action is for Ajax call update for every 2 mins
+	def my_pickups
+	  @select = "pickups"
+	  pick_bookings = Booking.find(:all, :conditions => ['status != ? and accepted_by = ?', 2, 0] )
+	  progress_bookings = Booking.find(:all, :conditions => ['accepted_by = ?', current_user.id] )
+	  @bookings = pick_bookings.concat(progress_bookings).uniq
+	  render :partial => "pickups"
+	end	
 
 	def show
 	  @select = "pickups"
