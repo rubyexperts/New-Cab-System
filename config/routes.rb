@@ -6,7 +6,7 @@ Cabie::Application.routes.draw do
     
     get 'login' => 'sessions#new'
     post 'login' => 'sessions#create', :as => :new_session
-    get 'logout' => 'sessions#destroy'    
+    get 'logout' => 'sessions#destroy'
     
     resources :password_resets, :only => [:new, :create, :edit, :update]
     
@@ -14,6 +14,14 @@ Cabie::Application.routes.draw do
     get 'confirmation_needed' => 'confirmations#confirmation_needed'
     
     resources :home
+    resources :bookings
+    resources :vehicles
+    resources :drivers
+    resources :pickups, :only => [:index, :show]
+    
+    match "/booking_status" => "bookings#booking_status"
+    match "/collected" => "pickups#collected"
+    match "/accept_booking/:id" => "pickups#accept_booking"
     
     root :to => "sessions#new"
   
