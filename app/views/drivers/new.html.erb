@@ -1,16 +1,119 @@
-<h1> Create Driver </h1>
 
-<div id="signup_form">
+<div class="mid_conteainer">
 
-    <%= form_for @driver, :url => drivers_path do |f| %>
-    
-        <%= render "shared/error_messages", :target => @driver %>
-  
-        <%= render "form", :f => f %>
-	
-    <% end %>
+     <div class="menu">
+         <ul id="sddm" style="margin:0 0 0 300px;">
+            <li id="button1"><a href="/home" title="">Home</a></li>
+            <li id="button1"><a href="/vehicles" title="">Vehicles</a></li>
+            <li id="button3"><a href="/drivers" style="color:#FFFFFF;">Drivers</a></li>
+            <li id="button2"><a href="products_makmagic.html" >Report</a></li>
+         </ul>                                   
+     </div>    
+     <div class="table_box">
+         <table width="930" border="0">
+            <tr> <td height="39">&nbsp;</td> </tr>
+         </table>
+     </div>
+     
+     <%= render "shared/error_messages", :target => @driver %>
+     
+     <div class="table_box">  
+        <table width="930" border="0">
+           <tr>
+               <td width="204" height="39">&nbsp;</td>
+               <td width="696" height="39">
+                   <div class="cmpn_drvr_bg">
+                       <div class="login_bg_head">
+                           <table width="458" height="41" border="0">
+                              <tr>
+                                <td width="3%">&nbsp;</td>
+                                <td width="6%"><img src="images/but_06.jpg" width="17" height="17" /></td>
+                                <td width="91%">New Driver</td>
+                              </tr>
+                           </table>     
+                       </div>
+                       <%= form_for @driver, :url => drivers_path do |f| %>
+                       <div class="login_bg_head_two">
+                          <table width="100%" border="0">
+                              <tr>
+                                  <td>&nbsp;</td>
+                              </tr>
+                          </table>
+                          <table width="458" height="294" border="0">
+                             <tr>
+                               <td width="33">&nbsp;</td>
+                               <td width="141">First Name</td>
+                               <td width="10">&nbsp;</td>
+                               <td width="249">                                 
+                                   <%= f.text_field :first_name, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %>
+                               </td>
+                               <td width="12">&nbsp;</td>
+                             </tr>  
+                             <tr>
+                               <td>&nbsp;</td>
+                               <td>Last Name</td>
+                               <td>&nbsp;</td>
+                               <td>                                  
+                                  <%= f.text_field :last_name, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %>
+                               </td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <td>&nbsp;</td>
+                               <td>Email</td>
+                               <td>&nbsp;</td>
+                               <td><%= f.text_field :email, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                              <td>&nbsp;</td>
+                              <td>Password</td>
+                              <td>&nbsp;</td>
+                              <td><%= f.password_field :password, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %></td>
+                              <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <td>&nbsp;</td>
+                               <td>Confirm Password</td>
+                               <td>&nbsp;</td>
+                               <td><%= f.password_field :password_confirmation, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %></td>
+                               <td>&nbsp;</td>
+                             </tr>  
+                             <tr>
+                               <td>&nbsp;</td>
+                               <td>License Number</td>
+                               <td>&nbsp;</td>
+                               <td><%= f.text_field :licence_number, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %></td>
+                               <td>&nbsp;</td>
+                             </tr> 
+                             <tr>
+                               <td>&nbsp;</td>
+                               <td>Mobile Number</td>
+                               <td>&nbsp;</td>
+                               <td><%= f.text_field :mobile_number, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %></td>
+                               <td>&nbsp;</td>
+                             </tr>                             
+                          </table>
+                          <table width="100%" border="0">
+                            <tr>
+                              <td width="41%">&nbsp;</td>
+                              <td width="18%">
+                                   <%= f.submit "Create" %>
+                              </td>
+                              <td width="7%">OR</td>
+                              <td width="29%">
+                                 <%= link_to "Cancel", drivers_path %>
+                              </td>
+                              <td width="5%">&nbsp;</td>
+                            </tr>
+                          </table>
+                       </div>
+                       <% end %>
+                   </div>
+               </td>
+               <td width="16" height="39">&nbsp;</td>
+           </tr>
+        </table>
+   </div>
 
 </div>
-
-
-

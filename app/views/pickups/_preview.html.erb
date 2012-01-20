@@ -1,22 +1,72 @@
-<h2> JOB PREVIEW </h2>
 
+ <div class="mid_conteainer">
 
-     <h3> Trip Summary </h3>
-
-     <p> Pick Up From : <%= @booking.pickup_address %> </p>
-
-     <p> Drop Off at : <%= @booking.drop_address %> </p>
-
-     <p> Collect with in <%= @booking.pick_time_in_mins %> mins
-
-     <% if @booking.is_pending? %>
-
-           <form action="/accept_booking/<%= @booking.id %>">
-               <input name="commit" type="submit" value="Accept" />
-           </form> &nbsp; Or &nbsp;
-
-           <form action="/accept_booking/<%= @booking.id %>">
-               <input name="commit" type="submit" value="Reject" />
-           </form>
-
-     <% end %> <br/><br/>
+     <div class="menu">
+         <ul id="sddm" style="margin:0 0 0 300px;">
+            <li id="button1"><a href="/home" title="">Home</a></li>
+            <li id="button3"><a href="/pickups" style="color:#FFFFFF;" >Pickups</a></li>
+            <li id="button2"><a href="/collected" title="">Collected</a></li>
+         </ul>                                   
+     </div>    
+     <div class="table_box">
+         <table width="930" border="0">
+            <tr> <td height="39">&nbsp;</td> </tr>
+         </table>
+     </div>  
+     <div class="table_box">
+        <table width="930" border="0">
+             <tr>
+               <td width="48" height="39">&nbsp;</td>
+               <td width="562" height="39" style="color:#0b54c3; font-size:22px; font-family:'Segoe UI';">
+                    <strong>Job Preview</strong>
+               </td>
+               <td width="306" height="39">&nbsp;</td>
+             </tr>
+             <tr>
+               <td width="48" height="39">&nbsp;</td>
+               <td width="562" height="39" style="color:#000000; font-size:22px; font-family:'Segoe UI';">
+                   <strong>Trip Summary</strong>
+               </td>
+               <td width="306" height="39">&nbsp;</td>
+             </tr>
+        </table>
+     </div>    
+     <div class="table_box">
+        <table width="930" border="0">
+            <tr>
+                <td width="47" height="39">&nbsp;</td>
+                <td width="851" height="39">
+                    <div class="drivers_hmpage">
+                        <div class="drivers_hm_s">
+                            <div class="drivers_hm_ss">Pick Up From	</div>
+                            <div class="drivers_hm_ss">Drop Off At	</div>
+                            <div class="drivers_hm_ss" style="border-bottom:0;">Collect With in	</div>
+                        </div>
+                        <div class="drivers_hm"><%= @booking.pickup_address %></div>
+                        <div class="drivers_hm"><%= @booking.drop_address %></div>
+                        <div class="drivers_hm" style="border-bottom:0;"><%= @booking.pick_time_in_mins %> mins</div>
+                    </div>
+                </td>
+                <td width="18" height="39"></td>
+            </tr>
+        </table>
+     </div>
+     <% if @booking.is_pending? %>  
+           <div class="table_box">
+               <table width="930" border="0">
+                   <tr>
+                     <form action="/accept_booking/<%= @booking.id %>">
+                        <td width="48" height="39">&nbsp;</td>
+                        <td width="76" height="39"><input name="commit" type="submit" value="Accept" /></td>
+                     </form>
+                     <td width="26" height="39">OR</td>
+                     <form action="/accept_booking/<%= @booking.id %>">
+                        <td width="715" height="39"><input name="commit" type="submit" value="Reject" /></td>
+                        <td width="43" height="39">&nbsp;</td>
+                     </form>
+                   </tr>
+               </table>
+           </div>            
+     <% end %>
+     
+</div>

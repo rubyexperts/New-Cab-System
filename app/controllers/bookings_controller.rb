@@ -3,14 +3,16 @@ class BookingsController < ApplicationController
   	before_filter :login_required
 	before_filter :check_permissions
 	before_filter :selected_tab
-	layout 'default'
+		
+	# layout 'default'	
+	layout 'passenger'
 	
 	def index
 	  @bookings = current_user.bookings.order("created_at DESC")
 	end
 	
 	def new
-	  @booking = current_user.bookings.new
+	  @booking = current_user.bookings.new	  
 	end
 	
 	def create

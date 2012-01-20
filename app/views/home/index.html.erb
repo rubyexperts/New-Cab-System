@@ -1,10 +1,18 @@
 
-<p>
 
-     This Is Home Page after logging in
-	 
-	 
-	 My Name is <%= current_user.first_name %>
-	 
-	 
-	 </p>
+<% if current_user.type == "Passenger" %>
+
+   <%= render "passenger" %>
+
+<% elsif current_user.type == "Driver" %>
+
+   <%= render "driver" %>
+   
+<% elsif current_user.type == "Company" %>
+
+   <%= render "company" %>
+
+<% end %>
+		
+		
+	

@@ -24,6 +24,8 @@ Cabie::Application.routes.draw do
     match "/accept_booking/:id" => "pickups#accept_booking"
     match "/my_pickups" => "pickups#my_pickups"
     
+    match "/reports" => "drivers#reports"
+    
     root :to => "sessions#new"
   
   # The priority is based upon order of creation:

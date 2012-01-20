@@ -1,16 +1,79 @@
-<h1> Create Vehicle </h1>
+ 
+<div class="mid_conteainer">
 
-<div id="signup_form">
-
-    <%= form_for @vehicle, :url => vehicles_path do |f| %>
-    
-        <%= render "shared/error_messages", :target => @vehicle %>
-  
-        <%= render "form", :f => f %>
-	
-    <% end %>
+     <div class="menu">
+         <ul id="sddm" style="margin:0 0 0 300px;">
+            <li id="button1"><a href="/home" title="">Home</a></li>
+            <li id="button3"><a href="/vehicles" title="" style="color:#FFFFFF;">Vehicles</a></li>
+            <li id="button1"><a href="/drivers">Drivers</a></li>
+            <li id="button2"><a href="products_makmagic.html" >Report</a></li>
+         </ul>                                   
+     </div>    
+     <div class="table_box">
+         <table width="930" border="0">
+            <tr> <td height="39">&nbsp;</td> </tr>
+         </table>
+     </div>
+     
+     <%= render "shared/error_messages", :target => @vehicle %>
+     <%= form_for @vehicle, :url => vehicles_path do |f| %>
+     <div class="table_box">
+         <table width="930" border="0">
+            <tr>
+                <td width="204" height="39">&nbsp;</td>
+                <td width="696" height="39">
+                   <div class="login_bg">
+                       <div class="login_bg_head">
+                          <table width="458" height="41" border="0">
+                             <tr>
+                               <td width="3%">&nbsp;</td>
+                               <td width="6%"><img src="images/but_06.jpg" width="17" height="17" /></td>
+                               <td width="91%">Create Vehicle</td>
+                             </tr>
+                          </table>     
+                       </div>
+                       <div class="login_bg_head_two">
+                          <table width="458" height="41" border="0">
+                            <tr>
+                              <td>&nbsp;</td>
+                            </tr>
+                          </table>                          
+                          <table width="458" height="91" border="0">
+                            <tr>
+                              <td width="37">&nbsp;</td>
+                              <td width="112">Vehicle Name</td>
+                              <td width="10">&nbsp;</td>                              
+                              <td width="262">                                 
+                                   <%= f.text_field :name, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %>
+                               </td>
+                              <td width="15">&nbsp;</td>
+                            </tr>
+                              <tr>
+                              <td width="37">&nbsp;</td>
+                              <td width="112">Taxi Number</td>
+                              <td width="10">&nbsp;</td>
+                              <td width="262">                                 
+                                   <%= f.text_field :taxi_number, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %>
+                               </td>
+                              <td width="15">&nbsp;</td>
+                            </tr>
+                          </table>                          
+                          <table width="100%" border="0">
+                            <tr>
+                              <td width="38%">&nbsp;</td>
+                              <td width="19%"><%= f.submit "Create" %></td>
+                              <td width="7%">OR</td>
+                              <td width="31%"><%= link_to "Cancel", vehicles_path %></td>
+                              <td width="5%">&nbsp;</td>
+                            </tr>
+                          </table>
+                       </div>
+                   </div>
+                </td>
+                <td width="16" height="39">&nbsp;</td>
+            </tr>  
+        </table>
+     </div>
+     <% end %>
 
 </div>
-
-
-

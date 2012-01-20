@@ -1,0 +1,71 @@
+
+<div class="mid_conteainer">
+  
+	 <div class="menu">  
+		 <ul id="sddm" style="margin:0 0 0 300px;">			
+			<li id="button3"><a href="/home" title="" style="color:#FFFFFF;">Home</a></li>
+			<li id="button1"><a href="/vehicles" title="">Vehicles</a></li>
+			<li id="button1"><a href="/drivers" >Drivers</a></li>
+			<li id="button2"><a href="/reports" >Report</a></li>
+		 </ul>  								   
+	 </div>  
+	 <div class="table_box">  
+		<table width="930" border="0">
+			<tr>
+			   <td height="39">&nbsp;</td>
+			</tr>
+		</table>
+	 </div>	 
+	 <div class="table_box">	
+		<table width="930" border="0">
+			 <tr>
+				 <td width="12" height="39">&nbsp;</td>
+				 <td width="826" height="39">
+					 <div class="name_cont">
+						<table width="100%" border="0">
+						  <tr>                 
+							<td width="17%" style="color:#666;">Company Name</td>
+							<td width="6%">:</td>
+							<td width="77%"><strong><%= current_user.first_name %> </strong></td>
+						  </tr>
+						</table>
+					 </div>									
+					 <div class="name_cont">
+						 <table width="100%" border="0">
+						   <tr>                         
+							  <td width="17%" style="color:#666;">Contact Number</td>
+							  <td width="6%">:</td>
+							  <td width="77%"><strong> <%= current_user.mobile_number %> </strong></td>
+						   </tr>
+						 </table>
+					 </div>
+					  <div class="name_cont">
+						<table width="100%" border="0">
+							<tr>
+							   <td width="17%" style="color:#666;">Email ID</td>
+							   <td width="6%">:</td>
+							   <td width="77%">
+								   <strong> <%= current_user.email %> </strong>
+							   </td>
+							</tr>
+						</table>
+					 </div>	
+					 <div class="name_cont">
+						<table width="100%" border="0">
+							<tr>
+							   <td width="17%" style="color:#666;"> No. of Employees </td>
+							   <td width="6%">:</td>
+							   <td width="77%">
+								   <strong> <%= Driver.find(:all).count %>  </strong>
+							   </td>
+							</tr>
+						</table>
+					 </div>
+				</td>
+				<td width="78" height="39"></td>
+			</tr>
+		</table>
+	 </div>
+	 
+	 
+</div>

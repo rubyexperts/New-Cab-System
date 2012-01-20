@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cab System</title>
-  <%= stylesheet_link_tag :all %>
+  <title>CallTaxi24x7</title>
+  <%= stylesheet_link_tag :all, 'manu_style', 'style' %>
   <%= javascript_include_tag :defaults, 'jquery', 'jquery.ui.core' %>
+  
    
   <script>
      var $j = jQuery.noConflict();
@@ -13,7 +14,20 @@
 </head>
 <body>
 
-<%= yield %>
+  
+    <div class="container">  
+      <div class="container_two">     
+         <div class="header">        
+           <div class="taxi_logo"><img src="images/Company-Vehicles-Page_02.jpg" width="224" height="90" /></div>          
+           <div class="spacer"></div>          
+           <div class="spacer1"></div>              
+         </div>  
+      
+         <%= yield %>
+      
+      </div>
+    </div>
+    
 
 </body>
 </html>

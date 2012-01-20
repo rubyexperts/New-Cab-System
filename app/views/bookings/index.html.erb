@@ -1,20 +1,65 @@
 
-<h4> All Bookings &nbsp; &nbsp;  |  &nbsp; &nbsp;<%= link_to "Create Booking", new_booking_path %> </h4>
+<div class="mid_conteainer">
 
------------------------------------------------------------------------------
-<% @bookings.each do |booking| %>
+     <div class="menu">
+         <ul id="sddm" style="margin:0 0 0 300px;">
+             <li id="button1"><a href="/home" title="">Home</a></li>
+             <li id="button5"><a href="/bookings" style="color:#FFFFFF;" >My bookings</a></li>
+         </ul>                                   
+     </div>    
+     <div class="table_box">
+         <table width="930" border="0">
+            <tr> <td height="39">&nbsp;</td> </tr>
+         </table>
+     </div>
+     <div class="table_box">
+         <table width="930" border="0">
+            <tr>
+                <td width="12" height="39">&nbsp;</td>
+                <td width="826" height="39"><a href="" style="color:#000000;">All Bookings</a>      |     <a href="/bookings/new" style="color:#0b54c3;">Create Booking</a> </td>
+                <td width="78" height="39">|</td>
+            </tr>
+         </table>
+     </div>
+     <div class="table_box">
+         <table width="930" border="0">
+            <tr> 
+               <td width="30" height="178">&nbsp;</td>
+               <td width="863" height="178">
+                   <div class="mid_cnt_box" style="width:860px;">
+                        <div class="mid_cnt_box_one">
+                            <div class="mid_cnt_twos"><strong>Pick Up From </strong></div>
+                            <% @bookings.each do |booking| %>
+                               <div class="mid_cnt_two"> <%= booking.pickup_address %> </div>
+                            <% end %>  
+                        </div>
+                        <div class="mid_cnt_box_one">
+                            <div class="mid_cnt_twos"><strong> Drop Off At</strong></div>
+                            <% @bookings.each do |booking| %>
+                               <div class="mid_cnt_two"> <%= booking.drop_address %> </div>
+                            <% end %>                        
+                        </div>    
+                        <div class="mid_cnt_box_ones">    
+                            <div class="mid_cnt_twoss"><strong>Booked At</strong></div>
+                            <% @bookings.each do |booking| %>
+                               <div class="mid_cnt_two_s"> <%= booking.created_at.strftime('%l:%M %p, %b %d') %> </div>
+                            <% end %> 
+                        </div>    
+                        <div class="mid_cnt_box_ones">    
+                            <div class="mid_cnt_twoss"><strong>Status</strong></div>
+                            <% @bookings.each do |booking| %>
+                               <div class="mid_cnt_two_s" style="color:#0b54c3; text-decoration:underline;">
+                                   <%= booking.current_status %> 
+                               </div>
+                            <% end %> 
+                        </div>    
+                   </div>
+               </td>
+               <td width="8" height="178">&nbsp;</td>
+            </tr>
+         </table>
+    </div>
 
-     <p onclick="location.href='/bookings/<%= booking.id %>'" style="cursor:pointer">  
-        Pick Up From : <%= booking.pickup_address %> </br>
-        Drop Off at : <%= booking.drop_address %> </br>
-        Booked At : <%= booking.created_at.strftime('%l:%M %p, %b %d') %> </br>
-        Status : <b> <%= booking.current_status %> </b>
-     </p>
-    -----------------------------------------------------------------------------
-<% end %>
-
-
-
-   
-
-  
+           
+ 
+</div>

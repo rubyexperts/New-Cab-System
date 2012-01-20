@@ -1,0 +1,68 @@
+
+<div class="mid_conteainer">
+
+	 <div class="menu">
+		 <ul id="sddm" style="margin:0 0 0 300px;">
+			<li id="button1"><a href="/home" title="">Home</a></li>
+			<li id="button1"><a href="/vehicles" title="">Vehicles</a></li>
+			<li id="button1"><a href="/drivers" >Drivers</a></li>
+			<li id="button3"><a href="/reports" style="color:#FFFFFF;">Report</a></li>
+		 </ul>                                    
+	 </div>    
+	 <div class="table_box">
+		 <table width="930" border="0">
+			<tr> <td height="39">&nbsp;</td> </tr>
+		 </table>
+	 </div>
+	 <div class="table_box">
+		 <table width="930" border="0">
+			<tr>
+				<td width="12" height="39">&nbsp;</td>
+				<td width="826" height="39">Reports </td>
+				<td width="78" height="39">|</td>
+			</tr>
+		 </table>
+	 </div>
+	 <div class="table_box">
+		 <table width="930" border="0">
+			<tr> 
+			   <td width="30" height="178">&nbsp;</td>
+			   <td width="863" height="178">
+				   <div class="mid_cnt_box" style="width:860px;">
+						<div class="mid_cnt_box_one">
+							<div class="mid_cnt_twos"><strong>Driver Name</strong></div>
+							<% @bookings.each do |booking| %>
+							   <% driver = Driver.find_by_id(booking.collected_by) %>
+							   <div class="mid_cnt_two"> <%= driver.first_name %> </div>
+							<% end %>  
+						</div>
+						<div class="mid_cnt_box_one">
+							<div class="mid_cnt_twos"><strong> Passenger Name </strong></div>
+							<% @bookings.each do |booking| %>
+							   <div class="mid_cnt_two"> <%= booking.user.first_name %> </div>
+							<% end %>                        
+						</div>    
+						<div class="mid_cnt_box_ones">    
+							<div class="mid_cnt_twoss"><strong>Date </strong></div>
+							<% @bookings.each do |booking| %>
+							   <div class="mid_cnt_two_s"> <%= booking.created_at.strftime('%d-%m-%Y') %> </div>
+							<% end %> 
+						</div>    
+						<div class="mid_cnt_box_ones">    
+							<div class="mid_cnt_twoss"><strong>Status</strong></div>
+							<% @bookings.each do |booking| %>
+							   <div class="mid_cnt_two_s" style="color:#0b54c3; text-decoration:underline;">
+								   <%= booking.current_status %> 
+							   </div>
+							<% end %> 
+						</div>    
+				   </div>
+			   </td>
+			   <td width="8" height="178">&nbsp;</td>
+			</tr>
+		 </table>
+	</div>
+
+		   
+ 
+</div>

@@ -2,7 +2,9 @@ class PickupsController < ApplicationController
 
     before_filter :login_required#, :exclude => [:my_pickups]
 	before_filter :check_permissions#, :exclude => [:my_pickups]
-	layout 'default'
+	#layout 'default'
+		
+	layout 'driver'
 
 	def index
 	  @select = "pickups"

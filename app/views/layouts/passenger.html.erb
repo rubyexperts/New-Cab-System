@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title>CallTaxi24x7</title>
+   
+     <%= stylesheet_link_tag :all, 'manu_style', 'style' %>
+     <%= javascript_include_tag :defaults, 'jquery', 'jquery.ui.core' %>
+	 
+	 <script>
+	    var $j = jQuery.noConflict();
+     </script>
+  
+     <%= csrf_meta_tag %>
+  
+</head>
+<body>
+
+  <div class="container">
+     <div class="container_two"> 
+	    
+        <div class="header">        
+          <div class="taxi_logo"><img src="images/Company-Vehicles-Page_02.jpg" width="224" height="90" /></div>          
+          <div class="spacer"></div>          
+          <div class="spacer1"></div>		  		            
+        </div>	 
+		<div class="log_out_box_one">  		
+			  <table width="400" border="0">
+				 <tr>
+					<td width="335">Welcome <%= current_user.email %> (<%= current_user.type %>)</td>
+					<td width="11"><img src="images/Company-Vehicles-Page_05.jpg" width="11" height="13" /></td>
+					<td width="40"><a href="/logout" style="color:#FF0000; text-decoration:underline;">Logout</a></td>
+				 </tr>
+			  </table>
+		</div>
+	    
+	    <%= yield %>
+		
+	</div>
+  </div>
+  
+</body>
+</html>	      

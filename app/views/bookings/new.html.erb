@@ -1,16 +1,89 @@
-<h1> Create Booking </h1>
 
-<div id="signup_form">
+<div class="mid_conteainer">
 
-    <%= form_for @booking, :url => bookings_path do |f| %>
-    
-        <%= render "shared/error_messages", :target => @booking %>
-  
-        <%= render "form", :f => f %>
-	
-    <% end %>
+     <div class="menu">
+          <ul id="sddm" style="margin:0 0 0 300px;">
+             <li id="button1"><a href="/home" title="">Home</a></li>
+             <li id="button5"><a href="/bookings" style="color:#FFFFFF;" >My bookings</a></li>
+          </ul>                                   
+     </div>       
+     <div class="table_box">
+         <table width="930" border="0">
+            <tr> <td height="39">&nbsp;</td> </tr>
+         </table>
+     </div>
+     
+     <%= render "shared/error_messages", :target => @booking %>
+     
+     <div class="table_box">  
+        <table width="930" border="0">
+           <tr>
+               <td width="204" height="39">&nbsp;</td>
+               <td width="696" height="39">
+                   <div class="cmpn_drvr_bg">
+                       <div class="login_bg_head">
+                           <table width="458" height="41" border="0">
+                              <tr>
+                                <td width="3%">&nbsp;</td>
+                                <td width="6%"><img src="images/but_06.jpg" width="17" height="17" /></td>
+                                <td width="91%">Create Booking</td>
+                              </tr>
+                           </table>     
+                       </div>
+                       <%= form_for @booking, :url => bookings_path do |f| %>
+                       <div class="login_bg_head_two">
+                          <table width="100%" border="0">
+                              <tr>
+                                  <td>&nbsp;</td>
+                              </tr>
+                          </table>
+                          <table width="458" height="294" border="0">
+                             <tr>
+                               <td width="33">&nbsp;</td>
+                               <td width="141">Pickup Address</td>
+                               <td width="10">&nbsp;</td>
+                               <td width="249">                                 
+                                   <%= f.text_area :pickup_address, :style => "width:235px; height:80px; border:#83a6db 1px solid;" %>
+                               </td>
+                               <td width="12">&nbsp;</td>
+                             </tr>  
+                             <tr>
+                               <td>&nbsp;</td>
+                               <td>Drop Address</td>
+                               <td>&nbsp;</td>
+                               <td>                                  
+                                  <%= f.text_area :drop_address, :style => "width:235px; height:80px; border:#83a6db 1px solid;" %>
+                               </td>
+                               <td>&nbsp;</td>
+                             </tr>                              
+                             <tr>
+                               <td>&nbsp;</td>
+                               <td>Pick up time</td>
+                               <td>&nbsp;</td>
+                               <td><%= f.text_field :pick_time_in_mins, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %></td>
+                               <td>&nbsp;</td>
+                             </tr>                                                         
+                          </table>
+                          <table width="100%" border="0">
+                            <tr>
+                              <td width="41%">&nbsp;</td>
+                              <td width="18%">
+                                   <%= f.submit "Create" %>
+                              </td>
+                              <td width="7%">OR</td>
+                              <td width="29%">
+                                 <%= link_to "Cancel", bookings_path %>
+                              </td>
+                              <td width="5%">&nbsp;</td>
+                            </tr>
+                          </table>
+                       </div>
+                       <% end %>
+                   </div>
+               </td>
+               <td width="16" height="39">&nbsp;</td>
+           </tr>
+        </table>
+   </div>
 
 </div>
-
-
-

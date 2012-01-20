@@ -1,20 +1,68 @@
 
-<h4> All Drivers &nbsp; &nbsp;  |  &nbsp; &nbsp; <%= link_to "New Driver", new_driver_path %>  </h4>
+<div class="mid_conteainer">
 
+	 <div class="menu">
+		 <ul id="sddm" style="margin:0 0 0 300px;">
+			<li id="button1"><a href="/home" title="">Home</a></li>
+			<li id="button1"><a href="/vehicles" title="">Vehicles</a></li>
+			<li id="button3"><a href="/drivers" style="color:#FFFFFF;">Drivers</a></li>
+			<li id="button2"><a href="/reports" >Report</a></li>
+		 </ul>                                     
+	 </div>    
+	 <div class="table_box">
+		 <table width="930" border="0">
+			<tr> <td height="39">&nbsp;</td> </tr>
+		 </table>
+	 </div>
+	 <div class="table_box">
+		 <table width="930" border="0">
+			<tr>
+				<td width="12" height="39">&nbsp;</td>
+				<td width="826" height="39"><a href="" style="color:#000000;">All Drivers</a>      |     <a href="/drivers/new" style="color:#0b54c3;">New Driver</a> </td>
+				<td width="78" height="39">|</td>
+			</tr>
+		 </table>
+	 </div>
+	 <div class="table_box">
+		 <table width="930" border="0">
+			<tr> 
+			   <td width="30" height="178">&nbsp;</td>
+			   <td width="863" height="178">
+				   <div class="mid_cnt_box" style="width:860px;">
+						<div class="mid_cnt_box_one">
+							<div class="mid_cnt_twos"><strong>Name </strong></div>
+							<% @drivers.each do |driver| %>
+							   <div class="mid_cnt_two">  <a href="/drivers/<%= driver.id %>" style="color:#0b54c3;"><%= driver.first_name %> </a></div>
+							<% end %>  
+						</div>
+						<div class="mid_cnt_box_one">
+							<div class="mid_cnt_twos"><strong> Email </strong></div>
+							<% @drivers.each do |driver| %>
+							   <div class="mid_cnt_two"> <%= driver.email %> </div>
+							<% end %>                       
+						</div>    
+						<div class="mid_cnt_box_ones">    
+							<div class="mid_cnt_twoss"><strong> License Number </strong></div>
+							<% @drivers.each do |driver| %>
+							   <div class="mid_cnt_two_s"> <%= driver.licence_number %> </div>
+							<% end %> 
+						</div>
+						<div class="mid_cnt_box_ones">    
+							<div class="mid_cnt_twoss"></div>
+							<% @drivers.each do |driver| %>
+							  <div class="mid_cnt_two_s">
+								  <a href="/drivers/<%= driver.id %>/edit" style="color:#0b54c3;">Edit</a>  <span style="color:#0b54c3;">|</span>  
+								  <%= link_to 'Destroy', driver, :confirm => 'Are you sure?', :style => "color:#0b54c3;", :method => :delete %>
+							  </div>
+							<% end %>
+						</div>					    
+				   </div>
+			   </td>
+			   <td width="8" height="178">&nbsp;</td>
+			</tr>
+		 </table>
+	</div>
 
-<% unless @drivers.empty? %>
-
-      <% @drivers.each do |driver| %>
-
-		  <p>  
-			 Licence Number : <%= driver.licence_number %> </br>
-			 Mobile Number : <%= driver.mobile_number %> </br>
-			 <%= link_to 'Edit', edit_driver_path(driver) %> &nbsp; | &nbsp;
-			 <%= link_to 'Destroy', driver, :confirm => 'Are you sure?', :method => :delete %>
-		  </p>
-
-	  <% end %>
-
-<% end %>
-
-
+		   
+ 
+</div>

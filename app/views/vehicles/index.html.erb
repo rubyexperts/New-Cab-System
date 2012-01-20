@@ -1,21 +1,62 @@
 
-<h4> All Vehicles &nbsp; &nbsp;  |  &nbsp; &nbsp; <%= link_to "New Vehicle", new_vehicle_path %>  </h4>
+<div class="mid_conteainer">
 
+     <div class="menu">
+         <ul id="sddm" style="margin:0 0 0 300px;">
+            <li id="button1"><a href="/home" title="">Home</a></li>
+            <li id="button3"><a href="/vehicles" title="" style="color:#FFFFFF;">Vehicles</a></li>
+            <li id="button1"><a href="/drivers" >Drivers</a></li>
+            <li id="button2"><a href="/reports" >Report</a></li>
+         </ul>                                   
+     </div>    
+     <div class="table_box">
+         <table width="930" border="0">
+            <tr> <td height="39">&nbsp;</td> </tr>
+         </table>
+     </div>
+     <div class="table_box">
+         <table width="930" border="0">
+            <tr>
+                <td width="12" height="39">&nbsp;</td>
+                <td width="826" height="39"><a href="" style="color:#000000;">All Vehicles</a>      |     <a href="/vehicles/new" style="color:#0b54c3;">New Vehicle</a> </td>
+                <td width="78" height="39">|</td>
+            </tr>
+         </table>
+     </div>
+     <div class="table_box">
+         <table width="930" border="0">
+            <tr> 
+               <td width="30" height="178">&nbsp;</td>
+               <td width="863" height="178">
+                   <div class="mid_cnt_box" style="width:860px;">
+                        <div class="mid_cnt_box_one">
+                            <div class="mid_cnt_twos"><strong>Vehicle Name </strong></div>
+                            <% @vehicles.each do |vehicle| %>
+                               <div class="mid_cnt_two"> <%= vehicle.name %> </div>
+                            <% end %>  
+                        </div>
+                        <div class="mid_cnt_box_one">
+                            <div class="mid_cnt_twos"><strong> Vehicle Number </strong></div>
+                            <% @vehicles.each do |vehicle| %>
+                               <div class="mid_cnt_two"> <%= vehicle.taxi_number %> </div>
+                            <% end %>                        
+                        </div>
+                        <div class="mid_cnt_box_one">    
+                            <div class="mid_cnt_twos"></div>
+                            <% @vehicles.each do |vehicle| %>
+                              <div class="mid_cnt_two">
+                                  <a href="/vehicles/<%= vehicle.id %>/edit" style="color:#0b54c3;">Edit</a>  <span style="color:#0b54c3;">|</span>  
+                                  <%= link_to 'Destroy', vehicle, :confirm => 'Are you sure?', :style => "color:#0b54c3;", :method => :delete %>
+                              </div>
+                            <% end %>
+                        </div>                        
+                   </div>
+               </td>
+               <td width="8" height="178">&nbsp;</td>
+            </tr>
+         </table>
+    </div>
 
-<% unless @vehicles.empty? %>
-  
-      <% @vehicles.each do |vehicle| %>
-
-          <p>  
-             Name : <%= vehicle.name %> </br>
-             Vehicle Number : <%= vehicle.taxi_number %> </br>
-             <%= link_to 'Edit', edit_vehicle_path(vehicle) %> &nbsp; | &nbsp;
-             <%= link_to 'Destroy', vehicle, :confirm => 'Are you sure?', :method => :delete %>
-          </p>
-          
-      <% end %>
-
-<% end %>
-   
-
-  
+           
+ 
+</div>

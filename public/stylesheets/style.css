@@ -1,0 +1,276 @@
+body
+{
+	background:#FFFFFF;
+	margin:auto;
+}
+
+.container
+{
+	width:1000px;
+	height:900px;
+	margin:auto;
+}
+
+.container_two
+{
+	width:930px;
+	height:900px;
+	margin:auto;
+}
+
+.header
+{
+	width:930px;
+	height:90px;
+	float:left;
+	overflow:hidden;
+}
+
+.taxi_logo
+{
+	width:224px;
+	height:90px;
+	float:left;
+}
+
+.spacer
+{
+	width:328px;
+	height:90px;
+	float:left;
+}
+
+.spacer_one
+{
+	width:300px;
+	height:90px;
+	float:left;
+}
+
+.spacer1
+{
+	width:376px;
+	height:55px;
+	float:left;
+}
+
+.log_out_box
+{
+	width:376px;
+	height:35px;
+	float:left;
+	font-family:"Times New Roman", Times, serif;
+	font-size:14px;
+	
+}
+
+.log_out_box_one
+{
+	width:400px;
+	height:35px;
+	float:left;
+	font-family:"Times New Roman", Times, serif;
+	font-size:14px;
+	
+}
+
+.mid_conteainer
+{
+	width:930px;
+	height:770px;
+	float:left;
+	border:#90b0e0 1px solid;
+}
+
+.menu
+{
+	background:url(../images/menu_05.jpg);
+	width:930px;
+	height:41px;
+	float:left;
+}
+
+.table_box
+{
+	width:930px;
+	float:left;
+	font-family:"Times New Roman", Times, serif;
+	font-size:16px;
+}
+
+
+.mid_cnt_box
+{
+	width:900px;
+	float:left;
+		border:#5e86c3 1px solid;
+		border-bottom:0;
+		border-right:0;
+}
+
+.mid_cnt_box_one
+{
+	width:285px;
+	
+	float:left;
+		
+}
+
+.mid_cnt_box_ones
+{
+	width:145px;
+	
+	float:left;
+		
+}
+
+
+.mid_cnt_two
+{
+	width:279px;
+	height:23px;
+	float:left;
+	border:#5e86c3 1px solid;
+	border-top:0;
+	border-left:0;
+	padding:2px 0 0 5px;
+	font-family:"Segoe UI";
+	font-size:16px;
+	color:#5c5c5c;
+	
+}
+
+.mid_cnt_twos
+{
+	background:#e1eaf9;
+	width:279px;
+	height:23px;
+	float:left;
+	border:#5e86c3 1px solid;
+	border-top:0;
+	border-left:0;
+	padding:2px 0 0 5px;
+		font-family:"Segoe UI";
+	font-size:16px;
+}
+
+.mid_cnt_twoss
+{
+	background:#e1eaf9;
+	width:139px;
+	height:23px;
+	float:left;
+	border:#5e86c3 1px solid;
+	border-top:0;
+	border-left:0;
+	padding:2px 0 0 5px;
+		font-family:"Segoe UI";
+	font-size:16px;
+}
+
+
+.mid_cnt_two_s
+{
+	width:139px;
+	height:23px;
+	float:left;
+	border:#5e86c3 1px solid;
+	border-top:0;
+	border-left:0;
+	padding:2px 0 0 5px;
+	font-family:"Segoe UI";
+	font-size:16px;
+	color:#5c5c5c;
+	
+}
+
+
+.name_cont
+{
+	width:820px;
+	padding:5px 0 5px 5px;
+	border-bottom:#d3dff3 1px solid;
+		font-family:"Segoe UI";
+	font-size:16px;
+}
+
+
+.login_bg
+{
+	background:url(../images/login_bg_03.jpg);
+	width:458px;
+	height:258px;
+	float:left;
+}
+
+.login_bg_head
+{
+	width:458px;
+	height:43px;
+	float:left;
+	overflow:hidden;
+	border-bottom:#90b0e0 1px solid;
+	font-family:"Segoe UI";
+	font-size:16px;
+	font-weight:bold;
+	color:#0b54c3;
+}
+
+.login_bg_head_two
+{
+	width:458px;
+
+	float:left;
+	overflow:hidden;
+
+	font-family:"Segoe UI";
+	font-size:16px;
+	
+	color:#000;
+}
+
+
+.cmpn_drvr_bg
+{
+	background:url(../images/Company-Update-Drivers-Page_bg_03.png);
+	width:458px;
+	height:474px;
+	float:left;
+}
+
+
+.main_login_bg
+{
+	background:url(../images/login_bs_03.png);
+	width:458px;
+	height:215px;
+	float:left;
+}
+
+
+.passebger_bg_one
+
+{
+	background:url(../images/Passenger-Create-Booking-Page_03.png);
+	width:458px;
+	height:474px;
+	float:left;
+	overflow:hidden;
+	font-family:"Segoe UI";
+	font-size:16px;
+	
+	color:#000;
+}
+
+.passenger_spacer
+{
+	width:458px;
+	float:left;
+	font-family:"Segoe UI";
+	font-size:16px;
+	
+	color:#000;
+}
+	
+	
+	
