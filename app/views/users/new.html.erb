@@ -1,8 +1,108 @@
-<h1> Sign Up </h1>
 
-<p> Already have an account? <%= link_to "Log in", login_path %>.</p>
+<div class="mid_conteainer">
+	<div class="table_box">
+       <table width="930" height="119" border="0">
+           <tr>
+	          <td height="39">&nbsp;</td>
+           </tr>
+       </table>
+    </div>
+	<%= form_for @user, :url => signup_path do |f| %>
+	<%= render "shared/error_messages", :target => @user %>
+    <div class="table_box">
+       <table width="930" border="0">
+          <tr>
+	          <td width="204" height="39">&nbsp;</td>
+	          <td width="696" height="39">
+ 	              <div class="cmpn_drvr_bg">
+	 	               <div class="login_bg_head">
+ 	                       <table width="458" height="41" border="0">
+                              <tr>
+                            	<td width="1%">&nbsp;</td>
+                            	<td width="5%"><img src="images/ic.png" width="17" height="17" /></td>
+                            	<td width="31%">Sign up</td>
+                            	<td width="11%">&nbsp;</td>
+                            	<td width="52%" style="font-family:'Segoe UI'; font-size:14px; color:#000; font-weight:0;">Already have an account? <a href="/login" style="color:#0b54c3;">Log in</a></td>
+                              </tr>
+                           </table>                            	 
+	                   </div>
+	 	               <div class="login_bg_head_two">
+       	                  <table width="100%" border="0">
+                             <tr>
+                          	    <td>&nbsp;</td>
+                             </tr>
+                          </table>
+	                      <table width="458" height="264" border="0">
+                              <tr>
+                             	<td width="33" height="34">&nbsp;</td>
+                             	<td width="141">First Name</td>
+                             	<td width="10">&nbsp;</td>
+                             	<td width="249">		    
+									<%= f.text_field :first_name, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %>
+								</td>
+                             	<td width="12">&nbsp;</td>
+                              </tr>
+                              <tr>
+	                            <td height="34">&nbsp;</td>
+	                            <td>Last Name</td>
+	                            <td>&nbsp;</td>
+	                            <td><%= f.text_field :last_name, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %></td>
+	                            <td>&nbsp;</td>
+                              </tr>    
+                              <tr>                            
+                            	<td height="34">&nbsp;</td>
+                            	<td>Email</td>
+                            	<td>&nbsp;</td>
+                            	<td>								   
+								   <%= f.text_field :email, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %>
+								</td>
+                            	<td>&nbsp;</td>
+                              </tr>  
+                              <tr>
+                            	<td height="34">&nbsp;</td>
+                            	<td>Type</td>
+                            	<td>&nbsp;</td>
+                            	<td width="249">								    
+									<%= f.select :type, options_for_select(%w(Passenger Company), "#{params[:type]}" ), :style => "width:235px; height:30px; border:#83a6db 1px solid;"  %>
+								</td>
+                            	<td>&nbsp;</td>
+                              </tr>  
+                              <tr>
+                            	<td height="34">&nbsp;</td>
+                            	<td>Password</td>
+                            	<td>&nbsp;</td>
+                            	<td>
+								  <%= f.password_field :password, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %>								  
+                            	<td>&nbsp;</td>
+                              </tr>  
+                              <tr>
+                            	<td height="34">&nbsp;</td>
+                            	<td>Confirm Password</td>
+                            	<td>&nbsp;</td>
+                            	<td>
+								   <%= f.password_field :password_confirmation, :style => "width:235px; height:30px; border:#83a6db 1px solid;" %>
+						        </td>
+                            	<td>&nbsp;</td>
+                              </tr>
+                          </table>
+                          <table width="100%" border="0">
+                            <tr>
+                          	   <td width="41%">&nbsp;</td>
+                          	   <td width="18%">							       
+								   <%= f.submit "Sign up" %>
+							   </td>
+                          	   <td width="7%">&nbsp;</td>
+                          	   <td width="29%">&nbsp;</td>
+                          	   <td width="5%">&nbsp;</td>
+                            </tr>
+                          </table>
+	                  </div>
+	              </div>	 
+	           </td>
+	           <td width="16" height="39">&nbsp;</td>
+           </tr>
+        </table>
+    </div>
+	<% end %>
 
-<%= render 'form' %>
-
-<p><%#= link_to 'Home', root_path  %></p>
-
+</div>
