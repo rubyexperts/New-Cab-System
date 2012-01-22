@@ -8,9 +8,12 @@ class PickupsController < ApplicationController
 
 	def index
 	  @select = "pickups"
-	  pick_bookings = Booking.find(:all, :conditions => ['status != ? and accepted_by = ?', 2, 0] )
-	  progress_bookings = Booking.find(:all, :conditions => ['accepted_by = ?', current_user.id] )
-	  @bookings = pick_bookings.concat(progress_bookings).uniq
+	  pick_bookings = Booking.find(:all, :conditions => ['status != ? and accepted_by = ? and status != ?', 2, 0, 3] )
+	  progress_bookings = Booking.find(:all, :conditions => ['accepted_by = ?', current_user.id] )	  
+	  reject_bookings = Booking.find(:all, :conditions => ['status = ? and rejected_by = ?', 3, current_user.id] )
+	  
+	  bookings_one = pick_bookings.concat(progress_bookings).uniq	  
+	  @bookings = bookings_one.concat(reject_bookings).uniq
 	end
 
     # This action is for Ajax call update for every 2 mins
